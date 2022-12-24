@@ -1,0 +1,26 @@
+import { Component } from '@angular/core';
+import { tap } from 'rxjs/operators';
+import * as i0 from "@angular/core";
+import * as i1 from "./messages.service";
+import * as i2 from "@angular/common";
+import * as i3 from "@angular/material/icon";
+export class MessagesComponent {
+    constructor(messagesService) {
+        this.messagesService = messagesService;
+        this.showMessages = false;
+        console.log('Created messages component');
+    }
+    ngOnInit() {
+        this.errors$ = this.messagesService.errors$.pipe(tap(() => (this.showMessages = true)));
+    }
+    onClose() {
+        this.showMessages = false;
+    }
+}
+MessagesComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.12", ngImport: i0, type: MessagesComponent, deps: [{ token: i1.MessagesService }], target: i0.ɵɵFactoryTarget.Component });
+MessagesComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.12", type: MessagesComponent, selector: "messages", ngImport: i0, template: "<ng-container *ngIf=\"errors$ | async as errors\">\n  <div class=\"messages-container\" *ngIf=\"showMessages\">\n    <div class=\"message\" *ngFor=\"let error of errors\">\n      {{ error }}\n    </div>\n\n    <mat-icon class=\"close\" (click)=\"onClose()\">close</mat-icon>\n  </div>\n</ng-container>\n", styles: [".messages-container{display:flex;color:#a94442;background-color:#f2dede;border:1px solid #ebccd1;padding:20px;font-family:Roboto;position:relative}.close{position:absolute;right:10px;top:10px;cursor:pointer}\n"], dependencies: [{ kind: "directive", type: i2.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { kind: "directive", type: i2.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "component", type: i3.MatIcon, selector: "mat-icon", inputs: ["color", "inline", "svgIcon", "fontSet", "fontIcon"], exportAs: ["matIcon"] }, { kind: "pipe", type: i2.AsyncPipe, name: "async" }] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.12", ngImport: i0, type: MessagesComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'messages', template: "<ng-container *ngIf=\"errors$ | async as errors\">\n  <div class=\"messages-container\" *ngIf=\"showMessages\">\n    <div class=\"message\" *ngFor=\"let error of errors\">\n      {{ error }}\n    </div>\n\n    <mat-icon class=\"close\" (click)=\"onClose()\">close</mat-icon>\n  </div>\n</ng-container>\n", styles: [".messages-container{display:flex;color:#a94442;background-color:#f2dede;border:1px solid #ebccd1;padding:20px;font-family:Roboto;position:relative}.close{position:absolute;right:10px;top:10px;cursor:pointer}\n"] }]
+        }], ctorParameters: function () { return [{ type: i1.MessagesService }]; } });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWVzc2FnZXMuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvY29tbW9ucy1saWIvc3JjL2xpYi9tZXNzYWdlcy9tZXNzYWdlcy5jb21wb25lbnQudHMiLCIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9jb21tb25zLWxpYi9zcmMvbGliL21lc3NhZ2VzL21lc3NhZ2VzLmNvbXBvbmVudC5odG1sIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQVUsTUFBTSxlQUFlLENBQUM7QUFHbEQsT0FBTyxFQUFFLEdBQUcsRUFBRSxNQUFNLGdCQUFnQixDQUFDOzs7OztBQVFyQyxNQUFNLE9BQU8saUJBQWlCO0lBSzVCLFlBQW1CLGVBQWdDO1FBQWhDLG9CQUFlLEdBQWYsZUFBZSxDQUFpQjtRQUo1QyxpQkFBWSxHQUFHLEtBQUssQ0FBQztRQUsxQixPQUFPLENBQUMsR0FBRyxDQUFDLDRCQUE0QixDQUFDLENBQUM7SUFDNUMsQ0FBQztJQUVELFFBQVE7UUFDTixJQUFJLENBQUMsT0FBTyxHQUFHLElBQUksQ0FBQyxlQUFlLENBQUMsT0FBTyxDQUFDLElBQUksQ0FDOUMsR0FBRyxDQUFDLEdBQUcsRUFBRSxDQUFDLENBQUMsSUFBSSxDQUFDLFlBQVksR0FBRyxJQUFJLENBQUMsQ0FBQyxDQUN0QyxDQUFDO0lBQ0osQ0FBQztJQUVNLE9BQU87UUFDWixJQUFJLENBQUMsWUFBWSxHQUFHLEtBQUssQ0FBQztJQUM1QixDQUFDOzsrR0FqQlUsaUJBQWlCO21HQUFqQixpQkFBaUIsZ0RDWDlCLGlUQVNBOzRGREVhLGlCQUFpQjtrQkFMN0IsU0FBUzsrQkFDRSxVQUFVIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50LCBPbkluaXQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IE9ic2VydmFibGUgfSBmcm9tICdyeGpzJztcblxuaW1wb3J0IHsgdGFwIH0gZnJvbSAncnhqcy9vcGVyYXRvcnMnO1xuaW1wb3J0IHsgTWVzc2FnZXNTZXJ2aWNlIH0gZnJvbSAnLi9tZXNzYWdlcy5zZXJ2aWNlJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAnbWVzc2FnZXMnLFxuICB0ZW1wbGF0ZVVybDogJy4vbWVzc2FnZXMuY29tcG9uZW50Lmh0bWwnLFxuICBzdHlsZVVybHM6IFsnLi9tZXNzYWdlcy5jb21wb25lbnQuY3NzJ10sXG59KVxuZXhwb3J0IGNsYXNzIE1lc3NhZ2VzQ29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcbiAgcHVibGljIHNob3dNZXNzYWdlcyA9IGZhbHNlO1xuXG4gIHB1YmxpYyBlcnJvcnMkITogT2JzZXJ2YWJsZTxzdHJpbmdbXT47XG5cbiAgY29uc3RydWN0b3IocHVibGljIG1lc3NhZ2VzU2VydmljZTogTWVzc2FnZXNTZXJ2aWNlKSB7XG4gICAgY29uc29sZS5sb2coJ0NyZWF0ZWQgbWVzc2FnZXMgY29tcG9uZW50Jyk7XG4gIH1cblxuICBuZ09uSW5pdCgpIHtcbiAgICB0aGlzLmVycm9ycyQgPSB0aGlzLm1lc3NhZ2VzU2VydmljZS5lcnJvcnMkLnBpcGUoXG4gICAgICB0YXAoKCkgPT4gKHRoaXMuc2hvd01lc3NhZ2VzID0gdHJ1ZSkpXG4gICAgKTtcbiAgfVxuXG4gIHB1YmxpYyBvbkNsb3NlKCkge1xuICAgIHRoaXMuc2hvd01lc3NhZ2VzID0gZmFsc2U7XG4gIH1cbn1cbiIsIjxuZy1jb250YWluZXIgKm5nSWY9XCJlcnJvcnMkIHwgYXN5bmMgYXMgZXJyb3JzXCI+XG4gIDxkaXYgY2xhc3M9XCJtZXNzYWdlcy1jb250YWluZXJcIiAqbmdJZj1cInNob3dNZXNzYWdlc1wiPlxuICAgIDxkaXYgY2xhc3M9XCJtZXNzYWdlXCIgKm5nRm9yPVwibGV0IGVycm9yIG9mIGVycm9yc1wiPlxuICAgICAge3sgZXJyb3IgfX1cbiAgICA8L2Rpdj5cblxuICAgIDxtYXQtaWNvbiBjbGFzcz1cImNsb3NlXCIgKGNsaWNrKT1cIm9uQ2xvc2UoKVwiPmNsb3NlPC9tYXQtaWNvbj5cbiAgPC9kaXY+XG48L25nLWNvbnRhaW5lcj5cbiJdfQ==

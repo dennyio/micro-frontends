@@ -2,12 +2,12 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "paths": {
+    "paths": {     
       "@commons-lib": [
-        "projects/commons-lib/src/public-api.ts"
+        "./dist/commons-lib/"
       ],
       "@store-lib": [
-        "projects/store-lib/src/public-api.ts"
+        "./dist/store-lib/"
       ]
     },
     "outDir": "./dist/out-tsc",
