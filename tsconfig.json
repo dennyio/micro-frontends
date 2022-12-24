@@ -4,10 +4,10 @@
     "baseUrl": "./",
     "paths": {     
       "@commons-lib": [
-        "./dist/commons-lib/"
+        "./docs/commons-lib/"
       ],
       "@store-lib": [
-        "./dist/store-lib/"
+        "./docs/store-lib/"
       ]
     },
     "outDir": "./dist/out-tsc",
